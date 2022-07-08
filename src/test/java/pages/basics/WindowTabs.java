@@ -1,12 +1,10 @@
-package pages.alerts;
+package pages.basics;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WindowType;
 import org.testng.annotations.Test;
 import pages.base.TestBase;
 
 import java.util.Iterator;
-import java.util.Optional;
 import java.util.Set;
 
 public class WindowTabs extends TestBase {

@@ -1,21 +1,16 @@
-package pages.alerts;
+package pages.basics;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.base.TestBase;
 
-import java.lang.annotation.Repeatable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class IForm1 extends TestBase {
+public class IFramesForm1 extends TestBase {
     // iframe 1
     By iframe1 = By.name("iframe1");
     By inputFirstName = By.id("inputFirstName3");

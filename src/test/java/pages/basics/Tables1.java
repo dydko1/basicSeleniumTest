@@ -1,16 +1,12 @@
-package pages.alerts;
+package pages.basics;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import pages.base.TestBase;
 
 import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 public class Tables1 extends TestBase {
