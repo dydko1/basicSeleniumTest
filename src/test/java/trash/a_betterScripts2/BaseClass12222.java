@@ -1,4 +1,4 @@
-package pages.a_betterScripts;
+package trash.a_betterScripts2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -6,18 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
-public class BaseClass {
+public class BaseClass12222 {
 
+    public WebDriver driver;
+    public WebDriverWait wait1;
 
-    static WebDriver driver;
-    static WebDriverWait wait1;
-
-    @BeforeClass
+    @BeforeTest
     public void setupApplication() {
 
         Reporter.log("=====Browser Session Started=====", true);
@@ -34,8 +32,7 @@ public class BaseClass {
         Reporter.log("=====Application Started=====", true);
     }
 
-
-    @AfterClass
+    @AfterMethod
     public void closeApplication() {
         driver.quit();
         Reporter.log("=====Browser Session End=====", true);

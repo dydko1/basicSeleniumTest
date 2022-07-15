@@ -1,4 +1,4 @@
-package pages.a_NullPointer;
+package trash.a_NullPointer;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package pages.a_betterScripts;
+package trash.a_betterScripts;
 
 public class Test extends BaseClass {
 

@@ -1,4 +1,4 @@
-package pages.a_NullPointer;
+package trash.a_NullPointer;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;

@@ -1,7 +1,6 @@
-package pages.a_NullPointer;
+package trash.a_NullPointer;
 
 import org.testng.annotations.Test;
-import pages.base.TestBase;
 
 public class TestTC{
 
