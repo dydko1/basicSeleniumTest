@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name ="Test">
+        <groups>
+            <run>
+                <include name = "bonding"></include>
+            </run>
+        </groups>
+        <classes>
+            <class name ="training.testng1.TestNGLoop"></class>
+        </classes>
+    </test>
+</suite>
