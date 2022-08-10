@@ -15,6 +15,9 @@ public class WindowTabs1 extends TestBase {
     By tableTbody = By.cssSelector("table > tbody");
     By bodyText = By.cssSelector("body");
 
+    WebElement big = driver.findElement(By.cssSelector("div[class*='Big']"));
+    WebElement medium = big.findElement(By.cssSelector("div[class*='Medium']"));
+    WebElement small = medium.findElement(By.cssSelector("div[class*='Small')]"));
 
     @Test
     public void openNewBrowserWindow() throws InterruptedException {
