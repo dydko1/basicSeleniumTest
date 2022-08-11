@@ -1,5 +1,6 @@
 package pomTestNG.pages111;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,8 +15,9 @@ public class TablePage111 extends BasePage111 {
         PageFactory.initElements(driver, this);
     }
 
-    //    @FindBy(css = "tbody")
-//    WebElement tbodyTable;
+    @FindBy(css = "tbody")
+    WebElement tbodyTable;
+
     @FindBy(css = "tr")
     List<WebElement> tr;
 

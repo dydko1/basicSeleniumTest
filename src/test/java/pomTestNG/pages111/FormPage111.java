@@ -32,6 +32,12 @@ public class FormPage111 extends BasePage111 {
     By buttonSignIn = By.cssSelector("button[type='submit'][class='btn btn-primary']");
     By validMessage = By.cssSelector("form > div:last-child > div:last-child");
 
+
+    // !!!!!!!!!!!!!!!!!!!!
+    By outerElement = By.xpath("(//select[@id='selectSeleniumCommands'])[1]");
+    By innerElement = By.xpath("./option[4]");
+    // !!!!!!!!!!!!!!!!!!!!
+
     public void fillForm11() {
         driver.get("https://seleniumui.moderntester.pl/form.php");
 
@@ -63,5 +69,10 @@ public class FormPage111 extends BasePage111 {
         js.executeScript("arguments[0].scrollIntoView();", element);
 
         assert (driver.findElement(validMessage).getText().contentEquals("Form send with success"));
+
+        WebElement outerElement1 = driver.findElement(outerElement); //.click();
+        outerElement1.findElement(innerElement).click();
+
+
     }
 }

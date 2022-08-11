@@ -1,13 +1,13 @@
 package pomTestNG.pages111;
 
-import _workingPOM.page.BasePage11;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import pomTestNG.pages111.base.BasePage111;
 
 
-public class ProgressBarPage111 extends BasePage11 {
+public class ProgressBarPage111 extends BasePage111 {
     //By progressBar = By.className(".progress-label");
     By progressBar = By.xpath("//div[@class='progress-label'][contains(text(),'Complete!')]");
 

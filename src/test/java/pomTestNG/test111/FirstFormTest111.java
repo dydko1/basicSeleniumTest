@@ -8,13 +8,14 @@ import pomTestNG.test111.base.BaseTest111;
 
 public class FirstFormTest111 extends BaseTest111 {
 
-    @Test(priority = 0)
+    @Ignore
+    @Test
     void fillForm1() throws InterruptedException {
         FormPage111 formPage11 = new FormPage111(driver);
         formPage11.fillForm11();
 //        ProgressBarPage11 progressBarPage11 = new ProgressBarPage11(driver);
 //        progressBarPage11.fillForm();
-        Thread.sleep(2500);
+        Thread.sleep(3500);
     }
 
     @Ignore
