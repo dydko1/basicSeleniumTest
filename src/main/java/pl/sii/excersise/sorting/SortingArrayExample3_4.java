@@ -22,7 +22,7 @@ public class SortingArrayExample3_4 {
         for (int i = 0; i < n; i++) {
             int j = i;
             int tmp = tab1[i];
-            while ((j > 0) && (tab1[j - 1] > tmp)) {
+            while (j > 0 && tab1[j - 1] > tmp) {
                 tab1[j] = tab1[j - 1];
                 j--;
             }

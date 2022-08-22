@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestNG_Test {
+public class TestNGTest {
     BusinessClass businessClass = new BusinessClass();
 
     @BeforeMethod
@@ -25,6 +25,12 @@ public class TestNG_Test {
         System.out.println("Second test");
         assertEquals(businessClass.concat("Java", "17"), "Java 17");
     }
+
+//    @Test
+//    public void testInTestNG3() {
+//        System.out.println("Third test");
+//        assertEquals(businessClass.concat("Java", "17"), "Java");
+//    }
 
     @AfterMethod
     public void tearDown() {
