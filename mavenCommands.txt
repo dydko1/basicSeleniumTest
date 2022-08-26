@@ -1,0 +1,5 @@
+mvn test -Dgroups=miro1
+mvn test -Dgroups=miro1,func
+mvn test -Dgroups=miro1,func.* // wszystkie
+mvn test -DexcludedGroups=miro2,sanity2 //exclude
+mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test2.xml //single xml run
