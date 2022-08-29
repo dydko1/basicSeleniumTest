@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="My TestNG Listeners123" parallel="none">
+
+    <listeners>
+        <!--listener class-name="pack2.Listeners"></listener-->
+        <listener class-name="pack2.TestListener"></listener>
+    </listeners>
+
+    <test name="Regression11">
+        <groups>
+            <run>
+                <include name="myAnnotation"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="pack2.TestNGAnnGroups4">
+                <methods>
+                    <include name="testpass"/>
+                    <include name="testfail"/>
+                    <include name="methodSkip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
