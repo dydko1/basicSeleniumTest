@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="My TestNG Listeners123" parallel="none">
+    <test name="Regreee">
+        <classes>
+            <class name="pack2.TestDemoClass">
+            </class>
+        </classes>
+    </test>
+</suite>
