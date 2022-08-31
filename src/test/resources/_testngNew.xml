@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Main Test Suite" verbose="5">
+
+    <!--> https://www.seleniumeasy.com/selenium-tutorials/creating-extent-reports-in-selenium-example </-->
+
+    <parameter name="OS" value="Windows"/>
+    <parameter name="browser" value="Chrome"/>
+
+    <test name="Extent Report Test">
+        <classes>
+            <class name="base.BasicExtentReport"/>
+        </classes>
+    </test>
+</suite>

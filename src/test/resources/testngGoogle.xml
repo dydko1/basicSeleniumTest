@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="base.TestListener" />
+    </listeners>
+    <parameter name="browserType" value="chrome" />
+    <parameter name="appURL" value="https://google.com" />
+
+    <test name="Admin Tests">
+        <classes>
+            <class name="tests.BasePageTest" />
+            <class name="tests.SignInPageTest" />
+            <class name="tests.CreateAccountTest" />
+        </classes>
+    </test>
+</suite>

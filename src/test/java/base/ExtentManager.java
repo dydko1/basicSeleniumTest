@@ -4,8 +4,8 @@ import java.io.File;
 
 import com.aventstack.extentreports.ExtentReports;
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-//import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+//import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
@@ -26,9 +26,9 @@ public class ExtentManager {
     public static ExtentReports createInstance() {
         String fileName = getReportPath(reportFilepath);
 
-        ExtentSparkReporter htmlReporter = new ExtentSparkReporter (fileName);
-        // htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
-//        htmlReporter.config().setChartVisibilityOnOpen(true);
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(fileName);
+        //htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
+        //htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setDocumentTitle(reportFileName);
         htmlReporter.config().setEncoding("utf-8");
@@ -60,5 +60,5 @@ public class ExtentManager {
         }
         return reportFileLocation;
     }
+
 }
- 
