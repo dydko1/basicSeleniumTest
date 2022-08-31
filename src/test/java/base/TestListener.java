@@ -2,6 +2,8 @@ package base;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,8 +20,10 @@ import java.io.IOException;
 
 public class TestListener implements ITestListener {
 
-    ExtentTest test;
-    ExtentTest log;
+    //ExtentTest test;
+    WebDriver driver = null;
+    String filePath = "C:\\Users\\mdyduch\\Documents\\javaTutorials\\JavaTrainings\\selenumBasic\\TestReport";
+    private static String fileSeperator = System.getProperty("file.separator");
 
     public void onStart(ITestContext context) {
         System.out.println("*** Test Suite " + context.getName() + " started ***");
@@ -45,59 +49,81 @@ public class TestListener implements ITestListener {
         System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
         ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
     }
+    
+    // it not works
+    public void onTestFailure1(ITestResult result) {
+        System.out.println("***** Error " + result.getName() + " test has failed *****");
+        String methodName = result.getName().toString().trim();
+        ITestContext context = result.getTestContext();
+        WebDriver driver = (WebDriver) context.getAttribute("driver");
+        takeScreenShot(methodName, driver);
+    }
 
-    //
+
+    public void takeScreenShot(String methodName, WebDriver driver) {
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        //The below method will save the screen shot in d drive with test method name
+        try {
+            FileUtils.copyFile(scrFile, new File(filePath + methodName + ".png"));
+            System.out.println("***Placed screen shot in " + filePath + " ***");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 //    public void onTestFailure(ITestResult result) {
-//        log.info("*** Test execution " + result.getMethod().getMethodName() + " failed...");
-//        log.info((result.getMethod().getMethodName() + " failed!"));
+//        ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
+//        test = extent.createTest("Test Case 2", "PASSED test case");
+//        test.info("*** Test execution " + result.getMethod().getMethodName() + " failed...");
+//        test.info((result.getMethod().getMethodName() + " failed!"));
 //
 //        ITestContext context = result.getTestContext();
 //        WebDriver driver = (WebDriver) context.getAttribute("driver");
 //
 //        String targetLocation = null;
 //
-//        String testClassName = "bbbbb"; //getTestClassName(result.getInstanceName()).trim();
-//        String timeStamp = "aaa";//Util.getCurrentTimeStamp(); // get timestamp
+//        //String testClassName = "bbbbb"; //getTestClassName(result.getInstanceName()).trim();
+//        //String timeStamp = "aaa";//Util.getCurrentTimeStamp(); // get timestamp
 //        String testMethodName = result.getName().toString().trim();
-//        String screenShotName = testMethodName + timeStamp + ".png";
+//        String screenShotName = testMethodName +  ".png";
 //        String fileSeperator = System.getProperty("file.separator");
 //        String reportsPath = System.getProperty("user.dir") + fileSeperator + "TestReport" + fileSeperator
 //                + "screenshots";
-//        log.info("Screen shots reports path - " + reportsPath);
+//        test.info("Screen shots reports path - " + reportsPath);
 //        try {
-//            File file = new File(reportsPath + fileSeperator + testClassName); // Set
+//            File file = new File(reportsPath + fileSeperator ); // Set
 //            // screenshots
 //            // folder
 //            if (!file.exists()) {
 //                if (file.mkdirs()) {
-//                    log.info("Directory: " + file.getAbsolutePath() + " is created!");
+//                    test.info("Directory: " + file.getAbsolutePath() + " is created!");
 //                } else {
-//                    log.info("Failed to create directory: " + file.getAbsolutePath());
+//                    test.info("Failed to create directory: " + file.getAbsolutePath());
 //                }
-//
 //            }
 //
 //            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-//            targetLocation = reportsPath + fileSeperator + testClassName + fileSeperator + screenShotName;// define
+//            targetLocation = reportsPath + fileSeperator +  fileSeperator + screenShotName;// define
 //            // location
 //            File targetFile = new File(targetLocation);
-//            log.info("Screen shot file location - " + screenshotFile.getAbsolutePath());
-//            log.info("Target File location - " + targetFile.getAbsolutePath());
+//            test.info("Screen shot file location - " + screenshotFile.getAbsolutePath());
+//            test.info("Target File location - " + targetFile.getAbsolutePath());
 //            FileHandler.copy(screenshotFile, targetFile);
 //
 //        } catch (FileNotFoundException e) {
-//            log.info("File not found exception occurred while taking screenshot " + e.getMessage());
+//            test.info("File not found exception occurred while taking screenshot " + e.getMessage());
 //        } catch (Exception e) {
-//            log.info("An exception occurred while taking screenshot " + e.getCause());
+//            test.info("An exception occurred while taking screenshot " + e.getCause());
 //        }
 //
 //// attach screenshots to report
-//        try {
-//            ExtentTestManager.getTest().fail("Screenshot",
-//                    MediaEntityBuilder.createScreenCaptureFromPath(targetLocation).build());
-//        } catch (IOException e) {
-//            log.info("An exception occured while taking screenshot " + e.getCause());
-//        }
+////        try {
+////            ExtentTestManager.getTest().fail("Screenshot",
+//                    MediaEntityBuilder.createScreenCaptureFromPath(targetLocation).build();
+////        } catch (IOException e) {
+////            test.info("An exception occured while taking screenshot " + e.getCause());
+////        }
 //        ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
 //
 //    }
