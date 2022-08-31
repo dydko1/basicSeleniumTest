@@ -49,16 +49,17 @@ public class TestListener implements ITestListener {
         System.out.println("*** Test execution " + result.getMethod().getMethodName() + " failed...");
         ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
     }
-    
-    // it not works
-    public void onTestFailure1(ITestResult result) {
+
+    //it does not work
+//    @Override
+    public void onTestFailure3(ITestResult result) {
         System.out.println("***** Error " + result.getName() + " test has failed *****");
+        ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
         String methodName = result.getName().toString().trim();
         ITestContext context = result.getTestContext();
-        WebDriver driver = (WebDriver) context.getAttribute("driver");
+        WebDriver driver = (WebDriver)context.getAttribute("driver");
         takeScreenShot(methodName, driver);
     }
-
 
     public void takeScreenShot(String methodName, WebDriver driver) {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
@@ -71,6 +72,54 @@ public class TestListener implements ITestListener {
         }
     }
 
+    //    @Override
+    public void onTestFailure2(ITestResult result) {
+        System.out.println("***** Error " + result.getName() + " test has failed *****");
+        ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
+
+        ITestContext context = result.getTestContext();
+        WebDriver driver = (WebDriver) context.getAttribute("driver");
+
+        String testClassName = getTestClassName(result.getInstanceName()).trim();
+
+        String testMethodName = result.getName().toString().trim();
+        String screenShotName = testMethodName + ".png";
+
+        if (driver != null) {
+            String imagePath = ".." + fileSeperator + "Screenshots"
+                    + fileSeperator + "Results" + fileSeperator + testClassName
+                    + fileSeperator
+                    + takeScreenShot(driver, screenShotName, testClassName);
+            System.out.println("Screenshot can be found : " + imagePath);
+        }
+    }
+
+    public static String takeScreenShot(WebDriver driver,
+                                        String screenShotName, String testName) {
+        try {
+            File file = new File("Screenshots" + fileSeperator + "Results");
+            if (!file.exists()) {
+                System.out.println("File created " + file);
+                file.mkdir();
+            }
+
+            File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File targetFile = new File("Screenshots" + fileSeperator + "Results" + fileSeperator + testName, screenShotName);
+            FileUtils.copyFile(screenshotFile, targetFile);
+
+            return screenShotName;
+        } catch (Exception e) {
+            System.out.println("An exception occured while taking screenshot " + e.getCause());
+            return null;
+        }
+    }
+
+    public String getTestClassName(String testName) {
+        String[] reqTestClassname = testName.split("\\.");
+        int i = reqTestClassname.length - 1;
+        System.out.println("Required Test Name : " + reqTestClassname[i]);
+        return reqTestClassname[i];
+    }
 
 //    public void onTestFailure(ITestResult result) {
 //        ExtentTestManager.getTest().log(Status.FAIL, "Test Failed");
