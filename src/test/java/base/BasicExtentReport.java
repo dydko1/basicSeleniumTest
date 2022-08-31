@@ -1,5 +1,8 @@
 package base;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.markuputils.CodeLanguage;
+import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -60,6 +63,8 @@ public class BasicExtentReport {
     @Test
     public void testCase1() {
         test = extent.createTest("Test Case 1", "PASSED test case");
+        test.info("<a href=\"https://www.w3schools.com\">Visit W3Schools</a>");
+        test.info(MarkupHelper.createLabel("Test !!!!!!!!!!!!!!!!!!!!!",ExtentColor.PINK));
         Assert.assertTrue(true);
     }
     
@@ -67,6 +72,7 @@ public class BasicExtentReport {
     public void testCase2() {
         test = extent.createTest("Test Case 2", "PASSED test case");
         Assert.assertTrue(true);
+
     }
     
     @Test
