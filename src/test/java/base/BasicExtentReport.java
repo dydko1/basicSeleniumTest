@@ -71,6 +71,7 @@ public class BasicExtentReport {
     @Test
     public void testCase2() {
         test = extent.createTest("Test Case 2", "PASSED test case");
+        test.addScreenCaptureFromPath("plik.png");
         Assert.assertTrue(true);
 
     }
