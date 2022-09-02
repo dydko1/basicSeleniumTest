@@ -96,7 +96,7 @@ public class BasicExtentReport {
 
     @Test
     public void testCase5Miro() {
-        test = extent.createTest("Test Case 5", "SKIPPED test case");
+        test = extent.createTest("Test Case 55555", "SKIPPED test case");
         throw new SkipException("Skipping this test with exception");
     }
 
