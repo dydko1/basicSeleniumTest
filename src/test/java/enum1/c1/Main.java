@@ -24,6 +24,9 @@ public class Main {
             default:
                 System.out.println("dddddddddddddddddd");
         }
-
+        System.out.println("---------------------------------");
+        Example example2 = Enum_A1;
+        example2.teee();
+        System.out.println("---------------------------------");
     }
 }

@@ -22,4 +22,12 @@ public enum Example {
     Example(Group1 group1) {
         this.group1 = group1;
     }
+
+    public void teee() {
+        for (Example eee : Example.values()
+        ) {
+            System.out.println("======\t" +group1);
+            System.out.println(eee.name());
+        }
+    }
 }
