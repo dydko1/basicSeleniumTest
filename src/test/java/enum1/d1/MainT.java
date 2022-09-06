@@ -7,5 +7,6 @@ public class MainT {
         // coś brak mi teraz pomyslu
         ProductTypeConfiguration productTypeConfiguration=new ProductTypeConfiguration(ProductType.A1);
         System.out.println(productTypeConfiguration);
+        System.out.println("kk:\t"+productTypeConfiguration.inGr());
     }
 }

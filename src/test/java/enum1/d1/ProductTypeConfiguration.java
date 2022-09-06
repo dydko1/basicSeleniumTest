@@ -1,7 +1,5 @@
 package enum1.d1;
 
-import enum1.c1.Group1;
-
 class ProductTypeConfiguration {
 
     static ProductType[] GROUPS_TYPE_A = {
@@ -26,6 +24,11 @@ class ProductTypeConfiguration {
 
     public ProductTypeConfiguration(ProductType productType) {
         this.productType = productType;
+    }
+
+    public String inGr() {
+        //System.out.println(this.productType.name());
+        return this.productType.name();
     }
 
     public boolean isInGroup(ProductType productType) {
