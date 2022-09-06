@@ -1,8 +1,6 @@
-package enum1.c1;
+package enum1.c1Ten;
 
-import com.beust.ah.A;
-
-import static enum1.c1.Example.*;
+import static enum1.c1Ten.Example.*;
 
 public class Main {
     public static void main(String[] args) {

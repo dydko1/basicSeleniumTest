@@ -1,4 +1,4 @@
-package enum1.c1;
+package enum1.c1Ten;
 
 public enum Group1 {
     A,

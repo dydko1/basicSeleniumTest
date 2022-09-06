@@ -1,4 +1,4 @@
-package enum1.c1;
+package enum1.c1Ten;
 
 public enum Example {
     Enum_A1(Group1.A),
@@ -26,6 +26,8 @@ public enum Example {
     public void teee() {
         for (Example eee : Example.values()
         ) {
+            eee.isInGroup(group1);
+            System.out.println(group1.name());
             System.out.println("======\t" +group1);
             System.out.println(eee.name());
         }
