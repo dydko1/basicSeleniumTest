@@ -1,4 +1,4 @@
-package enum1.g1;
+package enum1.f1;
 
 enum Subgroup {
     SUBGROUP1(MainGroup.GROUP_MAIN1), SUBGROUP2(MainGroup.GROUP_MAIN1),

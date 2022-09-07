@@ -1,4 +1,4 @@
-package enum1.g1;
+package enum1.f1;
 
 enum Col {
     COL1(Subgroup.SUBGROUP1), COL2(Subgroup.SUBGROUP1), COL3(Subgroup.SUBGROUP2), COL4(Subgroup.SUBGROUP2),

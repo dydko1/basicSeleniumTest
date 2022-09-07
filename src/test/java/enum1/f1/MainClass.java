@@ -1,4 +1,4 @@
-package enum1.g1;
+package enum1.f1;
 
 public class MainClass {
     public static void main(String[] args) {
