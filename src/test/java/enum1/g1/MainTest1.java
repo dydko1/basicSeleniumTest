@@ -3,7 +3,7 @@ package enum1.g1;
 public class MainTest1 {
     public static void main(String[] args) {
         //SubGroup2 subGroup2 = SubGroup2.ACCOUNT2;
-        BaseGroup baseGroup = SubGroup2.CARD3.getBaseGroup();
+        TopGroup baseGroup = SubGroup2.CARD3.getBaseGroup();
         SubGroup2 subGroup2 = SubGroup2.ACCOUNT1;
 
         switch (baseGroup) {

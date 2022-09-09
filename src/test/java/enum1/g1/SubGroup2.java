@@ -1,30 +1,28 @@
 package enum1.g1;
 
-import enum1.c1Ten.Group1;
-
 public enum SubGroup2 {
 
-    ACCOUNT1(BaseGroup.ACCOUNTS), ACCOUNT2(BaseGroup.ACCOUNTS), ACCOUNT3(BaseGroup.ACCOUNTS),
-    CARD1(BaseGroup.CARDS), CARD2(BaseGroup.CARDS), CARD3(BaseGroup.CARDS),
-    SAVINGS1(BaseGroup.SAVINGS), SAVINGS2(BaseGroup.SAVINGS), SAVINGS3(BaseGroup.SAVINGS);
+    ACCOUNT1(TopGroup.ACCOUNTS), ACCOUNT2(TopGroup.ACCOUNTS), ACCOUNT3(TopGroup.ACCOUNTS),
+    CARD1(TopGroup.CARDS), CARD2(TopGroup.CARDS), CARD3(TopGroup.CARDS),
+    SAVINGS1(TopGroup.SAVINGS), SAVINGS2(TopGroup.SAVINGS), SAVINGS3(TopGroup.SAVINGS);
 
     // -----------------
 
-    private BaseGroup baseGroup;
+    private TopGroup baseGroup;
 
-    SubGroup2(BaseGroup baseGroup) {
+    SubGroup2(TopGroup baseGroup) {
         this.baseGroup = baseGroup;
     }
 
-    public BaseGroup getBaseGroup() {
+    public TopGroup getBaseGroup() {
         return baseGroup;
     }
 
-    public void setBaseGroup(BaseGroup baseGroup) {
+    public void setBaseGroup(TopGroup baseGroup) {
         this.baseGroup = baseGroup;
     }
 
-    public  boolean isInGroup(BaseGroup baseGroup){
+    public  boolean isInGroup(TopGroup baseGroup){
         return this.baseGroup==baseGroup;
     }
 
