@@ -1,7 +1,7 @@
 linia 1
 linia 2
 linia 3
-linia 14222
-linia 2222225
+linia 4
+linia 5
 linia 6
 linia 7
