@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 linia 1 test 123
 
 f
@@ -16,3 +17,5 @@ linia 7
 
 Mirekkdkdljfdsjfjhds
 jfsdhfjds
+=======
+>>>>>>> parent of 2a6a9e8 (Color file created)
