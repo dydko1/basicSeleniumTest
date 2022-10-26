@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MySuite2" parallel="none">
+    <test name="Regression1">
+        <parameter name = "myName" value="Mirekkkk"/>
+        <classes>
+            <class name="pack1.TestNGAnnGroups12">
+
+            </class>
+        </classes>
+    </test>
+</suite>

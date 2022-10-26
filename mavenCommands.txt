@@ -7,6 +7,9 @@ mvn test -Dgroups=miro1,func.* // wszystkie
 mvn test -DexcludedGroups=miro2,sanity2 //exclude
 mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test2.xml //single xml run
 
+// To jest tooooo
+mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/test22.xml -Dbrowser=firefoxdddd
+
 
 //
 mvn test -Dgroups=pass123
