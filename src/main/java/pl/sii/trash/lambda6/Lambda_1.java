@@ -91,4 +91,30 @@ public class Lambda_1 {
                 })
                 .forEach(s -> System.out.println("forEach.: " + s));
     }
+
+    @Test
+    public void test_071() {
+        Stream.of("d2", "a4", "a2", "b1", "a1", "c", "a3")
+                .filter(s -> {
+                    System.out.println("Filter.: " + s);
+                    return s.startsWith("a");
+                })
+                .sorted((s1, s2) -> {
+                    System.out.printf("sort %s; %s\n", s1, s2);
+                    return s1.compareTo(s2);
+                })
+                .map(s -> {
+                    System.out.println("map.: " + s);
+                    return s.toUpperCase();
+                })
+                .forEach(s -> System.out.println("foreach.:" + s));
+    }
+
+    @Test
+    public void test_08() {
+        Stream<String> stream =
+                Stream.of("d2", "a2", "b1", "b3", "c", "add")
+                        .filter(s -> s.startsWith("a"));
+        stream.forEach(s -> System.out.println(s));
+    }
 }
