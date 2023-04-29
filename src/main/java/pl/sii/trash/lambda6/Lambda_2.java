@@ -3,10 +3,8 @@ package pl.sii.trash.lambda6;
 import lombok.Getter;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -61,5 +59,67 @@ public class Lambda_2 {
                 .collect(Collectors.joining(" and ", "In Germany ", " are of legal age."));
 
         System.out.println(phrase);
+    }
+
+    @Test
+    public void test_05() {
+        Map<Integer, String> map1 = persons
+                .stream()
+                .collect(Collectors.toMap(
+                        p -> p.age + 5,
+                        p -> p.name + "AA",
+                        (name1, name2) -> name1 + ";" + name2));
+
+        System.out.println(map1);
+    }
+
+    @Test
+    public void test_06() {
+        Collector<Person, StringJoiner, String> personNameCollector =
+                Collector.of(
+                        () -> new StringJoiner(" | "),
+                        (j, p) -> j.add(p.name.toUpperCase()),
+                        (j1, j2) -> j1.merge(j2),
+                        StringJoiner::toString);
+        String names = persons
+                .stream()
+                .collect(personNameCollector);
+
+        System.out.println(names);
+    }
+
+    @Test
+    public void test_07() {
+        Person result = persons
+                .stream()
+                .reduce(new Person("", 0), (p1, p2) -> {
+                    p1.age += p2.age;
+                    p1.name += p2.name;
+                    return p1;
+                });
+        System.out.println(result);
+    }
+
+    @Test
+    public void test_08() {
+        Arrays.asList("a1", "a2", "b1", "c2", "c1")
+                .parallelStream()
+                .filter(s -> {
+                    System.out.format("filter: %s [%s]\n",
+                            s, Thread.currentThread().getName());
+                    return true;
+                })
+                .map(s -> {
+                    System.out.format("map: %s [%s]\n",
+                            s, Thread.currentThread().getName());
+                    return s.toUpperCase();
+                })
+                .sorted((s1, s2) -> {
+                    System.out.format("sort: %s <> %s [%s]\n",
+                            s1, s2, Thread.currentThread().getName());
+                    return s1.compareTo(s2);
+                })
+                .forEach(s -> System.out.format("forEach: %s [%s]\n",
+                        s, Thread.currentThread().getName()));
     }
 }
