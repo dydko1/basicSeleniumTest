@@ -16,6 +16,7 @@ public class BaseTest {
 
         WebDriverManager.chromedriver().setup();
         options.addArguments("window-position=-2000,0", "start-maximized");
+        options.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
     }
