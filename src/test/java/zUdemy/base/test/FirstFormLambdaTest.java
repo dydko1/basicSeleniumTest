@@ -16,4 +16,28 @@ public class FirstFormLambdaTest extends BaseTest {
         FormPageLambda formPageLambda1 = new FormPageLambda(driver);
         formPageLambda1.lambda5();
     }
+
+    @Test
+    void fillForm6() {
+        FormPageLambda formPageLambda1 = new FormPageLambda(driver);
+        formPageLambda1.lambda6();
+    }
+
+    @Test
+    void fillForm7() {
+        FormPageLambda formPageLambda1 = new FormPageLambda(driver);
+        formPageLambda1.lambda7();
+    }
+
+    @Test
+    void fillForm8() {
+        FormPageLambda formPageLambda1 = new FormPageLambda(driver);
+        formPageLambda1.lambda8();
+    }
+
+    @Test
+    void fillForm9() {
+        FormPageLambda formPageLambda1 = new FormPageLambda(driver);
+        formPageLambda1.lambda9();
+    }
 }
