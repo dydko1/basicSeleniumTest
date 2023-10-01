@@ -1,4 +1,4 @@
-package pl.sii.javalambda;
+package pl.sii.javalambda.lambdaSyntax;
 
 public class Lambda_Behaviour {
     public static void main(String[] args) {
