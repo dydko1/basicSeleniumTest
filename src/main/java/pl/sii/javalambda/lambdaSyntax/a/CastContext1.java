@@ -1,4 +1,4 @@
-package pl.sii.javalambda.lambdaSyntax;
+package pl.sii.javalambda.lambdaSyntax.a;
 
 public class CastContext1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package pl.sii.javalambda.lambdaSyntax;
+package pl.sii.javalambda.lambdaSyntax.a;
 
 public class Introduce {
     public static void main(String[] args) {

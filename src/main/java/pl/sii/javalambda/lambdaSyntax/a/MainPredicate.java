@@ -1,4 +1,4 @@
-package pl.sii.javalambda.lambdaSyntax;
+package pl.sii.javalambda.lambdaSyntax.a;
 
 import java.util.function.Predicate;
 
