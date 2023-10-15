@@ -1,4 +1,4 @@
-package pl.sii.java67.com;
+package pl.sii.javalambda.java67.com;
 
 import java.util.ArrayList;
 import java.util.Arrays;
