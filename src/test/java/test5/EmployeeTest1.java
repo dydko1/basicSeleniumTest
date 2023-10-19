@@ -1,8 +1,9 @@
 package test5;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,6 +42,64 @@ public class EmployeeTest1 {
                 .map(employeeRepository::findById)
                 .collect(Collectors.toList());
 
-        assertEqi   uals(employees.size(), empIds.length);
+        assertEquals(employees.size(), empIds.length);
+    }
+
+    @Test
+    public void whenCollectStreamToList_thenGetList() {
+        List<Employee> employees = empList.stream().collect(Collectors.toList());
+
+        assertEquals(empList, employees);
+    }
+
+    @Test
+    public void whenFilterEmployees_thenGetFilteredStream() {
+        Integer[] empIds = {1, 2, 3, 4};
+
+        List<Employee> employees = Stream.of(empIds)
+                .map(employeeRepository::findById)
+                .filter(e -> e != null)
+                .filter(e -> e.getSalary() > 200000)
+                .collect(Collectors.toList());
+        System.out.println(employees);
+    }
+
+    @Test
+    public void whenFindFirst_thenGetFirstEmployeeInStream() {
+        Integer[] empIds = {1, 2, 3, 4};
+
+        Employee employee = Stream.of(empIds)
+                .map(employeeRepository::findById)
+                .filter(e -> e != null)
+                .filter(e -> e.getSalary() > 200000)
+                .findFirst()
+                .orElse(null);
+
+        System.out.println(employee);
+    }
+
+    @Test
+    public void whenFlatMapEmployeeNames_thenGetNameStream() {
+        List<List<String>> namesNested = Arrays.asList(
+                Arrays.asList("Jeff1", "Bezos1"),
+                Arrays.asList("Bill1", "Gates1"),
+                Arrays.asList("Mark1", "Zuckerberg1"));
+
+        List<String> namesFlatStream = namesNested.stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        System.out.println(namesFlatStream);
+    }
+
+    @Test
+    public void whenIncrementSalaryUsingPeek_thenApplyNewSalary() {
+        Employee[] arrayOfEmps = {
+                new Employee(1, "Jeff Bezos2", 100000.0),
+                new Employee(2, "Bill Gates2", 200000.0),
+                new Employee(3, "Mark Zuckerberg2", 300000.0)
+        };
+
+
     }
 }
