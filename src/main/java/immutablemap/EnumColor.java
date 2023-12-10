@@ -1,4 +1,4 @@
-package immutablemap2;
+package immutablemap;
 
 public enum EnumColor {
     RED,

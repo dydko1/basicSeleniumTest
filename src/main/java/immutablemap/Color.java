@@ -1,8 +1,8 @@
-package immutablemap2;
+package immutablemap;
 
 import com.google.common.collect.ImmutableMap;
 
-import static immutablemap2.EnumColor.*;
+import static immutablemap.EnumColor.*;
 
 public class Color {
     private String red = "Czerwony!";

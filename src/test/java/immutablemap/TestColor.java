@@ -1,4 +1,4 @@
-package immutablemap2;
+package immutablemap;
 
 import org.junit.jupiter.api.Test;
 
