@@ -30,7 +30,7 @@ public class BrowserDriverFactory {
 
             default:
                 System.out.println("Do not know how to start: " + browser + ", starting chrome.");
-                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+                //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
                 driver.set(new ChromeDriver());
                 break;
         }
