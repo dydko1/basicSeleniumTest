@@ -11,11 +11,18 @@ public class WatirPage extends BasePage11 {
     public void getNestedElement() {
         driver.get("http://watir.com/examples/shadow_dom.html");
 
-        WebElement shadowHost = driver.findElement(By.id("shadow_host"));
-        SearchContext shadowRoot = shadowHost.getShadowRoot();
-        WebElement shadowContent = shadowRoot.findElement(By.cssSelector("#nested_shadow_host"));
-        SearchContext sc = shadowContent.getShadowRoot();
-        System.out.println(sc.findElement(By.cssSelector("div")).getText());
+//        WebElement shadowHost = driver.findElement(By.id("shadow_host"));
+//        SearchContext shadowRoot = shadowHost.getShadowRoot();
+//        WebElement shadowContent = shadowRoot.findElement(By.cssSelector("#nested_shadow_host"));
+//        SearchContext sc = shadowContent.getShadowRoot();
+//        System.out.println(sc.findElement(By.cssSelector("div")).getText());
+
+        WebElement shadowHost = driver.findElement(By.id("shadow_host"))
+                .getShadowRoot()
+                .findElement(By.cssSelector("#nested_shadow_host"))
+                .getShadowRoot()
+                .findElement(By.cssSelector("div"));
+        System.out.println(shadowHost.getText());
 
 
 //        WebElement shadowHost1 = driver.findElement(By.id("shadow_host"))
