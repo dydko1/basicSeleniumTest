@@ -15,10 +15,10 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
 
         WebDriverManager.chromedriver().setup();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--ignore-ssl-errors=yes");
-        options.addArguments("--ignore-certificate-errors");
-        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--ignore-ssl-errors=yes");
+//        options.addArguments("--ignore-certificate-errors");
+//        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("window-position=-2000,0", "start-maximized");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
