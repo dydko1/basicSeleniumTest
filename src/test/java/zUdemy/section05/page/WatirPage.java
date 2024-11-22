@@ -52,11 +52,11 @@ public class WatirPage extends BasePage11 {
         WebElement we = shadowRoot.findElement(By.cssSelector("a[href='scroll.html']"));
         //we.click();
 
-        WebElement we1 = (WebElement) ((JavascriptExecutor) driver).executeScript(
-                "return arguments[0].shadowRoot", we);
+//        WebElement we1 = (WebElement) ((JavascriptExecutor) driver).executeScript(
+//                "return arguments[0].shadowRoot", we);
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click();", we);
+        js.executeScript("arguments[0].click()", we);
         //we1.click();
         //System.out.println(we.getText());
     }
