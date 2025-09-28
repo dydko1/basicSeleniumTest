@@ -1,3 +1,4 @@
+@TablesType1
 Feature: User Login Functionality
 
   Scenario Outline: Successful and unsuccessful user login
