@@ -7,7 +7,6 @@ import io.cucumber.junit.CucumberOptions;
         features = "src/test/resources/features",
         glue = "pack1", // To tutaj dodajesz `glue`!
         plugin = {"pretty"}
-
 )
 public class TestRunner {
 }
