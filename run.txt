@@ -1,1 +1,7 @@
- mvn test -Dcucumber.filter.tags="@TablesType or @TablesType1"
+ mvn clean test -Dcucumber.filter.tags="@TablesType or @TablesType1"
+po nowemu w cmd!!
+mvn clean test -Dtags.to.run=${tagi.grupa2}
+
+ po nowemu bash !!!
+ $ mvn clean test -Dtags.to.run='${tagi.grupa3}'
+

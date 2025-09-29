@@ -19,10 +19,19 @@
 
         <!-- 3. WERSJE ZALEŻNOŚCI (Biblioteki) -->
         <cucumber.version>7.29.0</cucumber.version>
-        <junit.platform.version>1.10.2</junit.platform.version>
+        <junit.platform.version>1.13.4</junit.platform.version>
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <lombok.version>1.18.42</lombok.version>
         <jna.version>5.14.0</jna.version>
+        <commons-collections4.version>4.5.0</commons-collections4.version>
+        <commons.lang3.version>3.19.0</commons.lang3.version>
+        <jackson.databind.verion>2.17.1</jackson.databind.verion>
+
+        <tagi.grupa1>@TablesType1</tagi.grupa1>
+        <tagi.grupa2>@TablesType2</tagi.grupa2>
+        <tagi.grupa3>@TablesType3</tagi.grupa3>
+        <tagi.wszystkie>${tagi.grupa1} or ${tagi.grupa2} or ${tagi.grupa3}</tagi.wszystkie>
+        <tags.to.run>${tagi.wszystkie}</tags.to.run>
     </properties>
 
     <dependencies>
@@ -52,8 +61,28 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- WYMUSZENIE WERSJI: Dodajemy Commons, aby upewnić się, że klasa
+             'org.junit.platform.commons.support.Resource' jest dostępna w wersji 1.10.2. -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
@@ -73,6 +102,26 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.databind.verion}
+            </version> <!-- Sprawdź, czy wersja odpowiada tej w Pana properties, jeśli istnieje -->
+            <scope>test</scope>
         </dependency>
 
         <!--        <dependency>-->
@@ -108,8 +157,19 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <includes>
-                        <!--                        <include>TestRunner.java</include>-->
+                        <include>**/RunCucumberTest.java</include>
                     </includes>
+                    <systemPropertyVariables>
+                        <junit.platform.reporting.details.enable>false</junit.platform.reporting.details.enable>
+                        <junit.platform.log.capture.enabled>false</junit.platform.log.capture.enabled>
+                        <cucumber.filter.tags>${tags.to.run}</cucumber.filter.tags>
+                    </systemPropertyVariables>
+                    <!--                    <properties>-->
+                    <!--                        <property>-->
+                    <!--                            <name>cucumber.filter.tags</name>-->
+                    <!--                            <value>${tag.selection}</value>-->
+                    <!--                        </property>-->
+                    <!--                    </properties>-->
                 </configuration>
             </plugin>
         </plugins>
