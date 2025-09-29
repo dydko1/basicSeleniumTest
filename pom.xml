@@ -157,7 +157,7 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <includes>
-                        <include>**/RunCucumberTest.java</include>
+<!--                        <include>**/RunCucumberTest.java</include>-->
                     </includes>
                     <systemPropertyVariables>
                         <junit.platform.reporting.details.enable>false</junit.platform.reporting.details.enable>
