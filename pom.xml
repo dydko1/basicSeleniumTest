@@ -26,6 +26,7 @@
         <commons-collections4.version>4.5.0</commons-collections4.version>
         <commons.lang3.version>3.19.0</commons.lang3.version>
         <jackson.databind.verion>2.17.1</jackson.databind.verion>
+        <cucumber-picocontainer.version>7.29.0</cucumber-picocontainer.version>
 
         <tagi.grupa1>@TablesType1</tagi.grupa1>
         <tagi.grupa2>@TablesType2</tagi.grupa2>
@@ -121,6 +122,12 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.databind.verion}
             </version> <!-- Sprawdź, czy wersja odpowiada tej w Pana properties, jeśli istnieje -->
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber-picocontainer.version}</version>
             <scope>test</scope>
         </dependency>
 
