@@ -25,6 +25,14 @@ public class LoginSteps {
         // Code to click the login button
     }
 
+    @And("the user gender is {word}")
+    public void userGender(String gender) {
+        DataGeneratorServiceImpl dataGeneratorService = new DataGeneratorServiceImpl();
+        String s=dataGeneratorService.resolveDynamicArgument(gender);
+        System.out.println("User gender is: " + s);
+        // Code to click the login button
+    }
+
     @Then("the user should see the message {string}")
     public void userShouldSeeMessage(String expectedMessage) {
         System.out.printf("Step 4: Verifying that the message '%s' is displayed.\n", expectedMessage);
