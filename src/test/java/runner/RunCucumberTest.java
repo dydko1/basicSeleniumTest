@@ -10,7 +10,7 @@ import org.junit.platform.suite.api.SelectClasspathResource;
 // WSKAZUJE: Gdzie są pliki .feature (co generujeło ostrzeżenie, ale jest wymagane przez Pana strukturę)
 @SelectClasspathResource("features")
 // WSKAZUJE: Gdzie jest Glue Code
-@SelectPackages("pack1")
+@SelectPackages({"pack1","demo"})
 public class RunCucumberTest {
     // ...
 }
