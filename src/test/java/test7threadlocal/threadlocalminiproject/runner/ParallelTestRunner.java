@@ -1,6 +1,6 @@
-package threadlocalminiproject.runner;
-import threadlocalminiproject.context.ContextManager;
-import threadlocalminiproject.context.TestContext;
+package test7threadlocal.threadlocalminiproject.runner;
+import test7threadlocal.threadlocalminiproject.context.ContextManager;
+import test7threadlocal.threadlocalminiproject.context.TestContext;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

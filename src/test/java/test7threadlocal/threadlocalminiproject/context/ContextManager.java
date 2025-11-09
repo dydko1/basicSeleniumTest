@@ -1,4 +1,4 @@
-package threadlocalminiproject.context;
+package test7threadlocal.threadlocalminiproject.context;
 
 public class ContextManager {
     private static final ThreadLocal<TestContext> testContext = new ThreadLocal<>();

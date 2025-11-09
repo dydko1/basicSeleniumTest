@@ -1,4 +1,4 @@
-package threadlocalminiproject.context;
+package test7threadlocal.threadlocalminiproject.context;
 
 public class TestContext {
     private String userId;
