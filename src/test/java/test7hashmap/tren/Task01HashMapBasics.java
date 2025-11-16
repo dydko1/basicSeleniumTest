@@ -1,9 +1,9 @@
-package test7hashmap;
+package test7hashmap.tren;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class HashMapBasics {
+public class Task01HashMapBasics {
     public static void main(String[] args) {
         Map<String, Integer> scores = new HashMap<>();
         scores.put("Mirek", 10);
