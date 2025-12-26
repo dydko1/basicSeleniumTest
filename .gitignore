@@ -7,5 +7,4 @@
 **/build/
 
 # Log4j2 config files (gdziekolwiek w repo)
-log4j2*.xml
-log4j2*.properties
+**/log4j2/
