@@ -1,4 +1,4 @@
-package test7trash
+package test7trash.assertThat1
 
 import static org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
