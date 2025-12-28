@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "code": "A1",
+      "price": 0,
+      "enabled": false
+    },
+    {
+      "code": "B2",
+      "price": 0,
+      "enabled": false
+    },
+    {
+      "code": "C3",
+      "price": 0,
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "customers": [
+    {
+      "id": "C1",
+      "name": "",
+      "status": ""
+    },
+    {
+      "id": "C2",
+      "name": "",
+      "status": ""
+    },
+    {
+      "id": "C3",
+      "name": "",
+      "status": ""
+    }
+  ]
+}

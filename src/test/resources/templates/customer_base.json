@@ -1,0 +1,10 @@
+{
+  "customer": {
+    "firstName": "",
+    "lastName": ""
+  },
+  "customerId": "",
+  "communicationData": {
+    "email": ""
+  }
+}
