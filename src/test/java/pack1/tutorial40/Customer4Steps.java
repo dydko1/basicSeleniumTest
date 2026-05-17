@@ -11,7 +11,7 @@ public class Customer4Steps {
 
     private final Scenario4Context scenarioContext = new Scenario4Context();
 
-    @Given("base customer json is loaded")
+    @Given("base customer json is loaded from template")
     public void baseCustomerJsonIsLoaded() {
 
         String json = Resource4Utils.readClasspath("tutorial4/customer_base_simple.json");
