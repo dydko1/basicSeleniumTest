@@ -4,7 +4,6 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
@@ -59,9 +58,6 @@ public class Customer4Steps {
 
     @Then("print final customer json v2")
     public void printFinalCustomerJsonv2() {
-
-        System.out.println("------------");
         log.info("FINAL CUSTOMER JSON v2:\n{}\n", customerJson);
-        System.out.println("------------");
     }
 }
